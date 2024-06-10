@@ -107,7 +107,7 @@ const AddExpenses = ({ setModalIsOpen }) => {
         </div>
         <div className="add-expenses-div-division">
           <div>
-            <span>{renderIcon()}</span>
+            {/* <span>{renderIcon()}</span> */}
             <input
               type="text"
               name="category"

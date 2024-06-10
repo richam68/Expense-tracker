@@ -29,7 +29,7 @@ const AddIncomeForm = ({ setModalIsOpen }) => {
   return (
     <div className="balance-page">
       <p className="heading-balance-page">Add Balance</p>
-      <form onSubmit={handleSubmit} style={{padding: 5, display: 'flex', gap: 9}}>
+      <form onSubmit={handleSubmit} className="add-balance-form">
         <input
           type="number"
           name="amount"
@@ -39,9 +39,10 @@ const AddIncomeForm = ({ setModalIsOpen }) => {
           placeholder="Income Amount"
           required
         />
-
+<div className="balance-button-container">
         <button type="submit" className="balance-submit-button">Add Balance</button>
         <button onClick={handleCancel} className="balance-cancel-button">Cancel</button>
+        </div>
       </form>
     </div>
   );

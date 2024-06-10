@@ -26,8 +26,10 @@ const TopExpenses = () => {
   return (
     <>
     {Boolean(data.length) ?
-    <Card style={{padding: 10, width: 400, height: 395 }}>
-      <BarChart width={355} height={380} data={data} style={{backgroundColor: ""}}>
+    <Card className="barchart-card-container" 
+    //style={{padding: 10, width: 400, height: 395 }}
+    >
+      <BarChart width={300} height={300} data={data}>
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" tick={{ fontSize: 12 }} />
         <YAxis />

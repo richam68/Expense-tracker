@@ -12,19 +12,18 @@ function Header() {
       <h3 className="text-white">Expense Tracker</h3>
       {/* {window.width != '992px' ? className="wrapper " : className="wrapper-break-point" } */}
    
-       {/* <div className="wrapper ">
+       <div className="wrapper-div-change">
         <div className="wrapper-break-point">
       <WalletBalance />
         <ExpenseBalance />
          </div>
        <PieChartComponent />
-      </div> */}
+      </div>
 
 
       <div className="wrapper ">
         <WalletBalance />
         <ExpenseBalance />
-
         <PieChartComponent />
       </div>
 
@@ -34,7 +33,7 @@ function Header() {
 
           <Transactions />
         </div>
-        <div>
+        <div className="top-expense-barchart">
           <h3 className="text-white">Top Expenses</h3>
           <ExpenseTrendsBar />
         </div>

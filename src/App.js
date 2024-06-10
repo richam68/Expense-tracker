@@ -10,7 +10,7 @@ function App() {
   return (
     <ExpenseProvider>
       <SnackbarProvider maxSnack={3}>
-        <Container className="mt-3">
+        <Container className="m-1">
           <Row>
             <Col>
               <Header />

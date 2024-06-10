@@ -8,7 +8,17 @@
   justify-content: center;
   align-items: center;
 }
-
+.wrapper-div-change {
+  padding: 20px;
+  background-color: var(--css-gray);
+  width: 100%;
+  height: 233px;
+  border-radius: 10px;
+  display: none;
+}
+.wrapper-break-point {
+  display: none;
+}
 .wallet-container {
   background-color: rgba(155, 155, 155, 1);
   border-radius: 15px;
@@ -222,6 +232,24 @@
   gap: 15px;
   margin-bottom: 10px;
 }
+.barchart-card-container {
+  padding: 10px;
+  width: 400px;
+  height: 395px;
+}
+/* .barChart-container {
+  width: 355px;
+  height: 380px;
+} */
+.add-balance-form {
+  padding: 5;
+  display: flex;
+  gap: 9px;
+}
+.balance-button-container {
+  display: flex;
+  gap: 9px;
+}
 @media screen and (max-width: 992px) {
   .wallet-button,
   .expenses-button {
@@ -232,9 +260,21 @@
   .add-income {
     font-size: 10px;
   }
+  .barchart-card-container {
+    width: 100%;
+  }
+  .top-expense-barchart {
+    width: 100% !important;
+  }
   .wrapper {
     height: 500px;
-    
+    display: none;
+  }
+  .wrapper-div-change {
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .wrapper-break-point {
     display: flex;
@@ -250,5 +290,69 @@
   }
   .expenses-wrapper {
     width: 150px;
+  }
+  .add-balance-form {
+    display: flex;
+    flex-direction: column;
+  }
+  .ReactModal__Content {
+    background-color: rgba(0, 0, 0, 0) !important;
+    display: flex;
+    justify-content: normal;
+    align-items: center;
+  }
+  .balance-page {
+    width: 405px;
+    height: 213px;
+  }
+}
+@media screen and (max-width: 552px) {
+  .wallet-container,
+  .expenses-wrapper {
+    width: 99px;
+    padding: 26px;
+  }
+  .wrapper-div-change {
+    height: 500px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .wrapper-break-point {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  .balance-page {
+    width: 284px;
+    height: 213px;
+  }
+  .ReactModal__Content {
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+  .expense-html-form {
+    margin: 0px;
+  }
+  .add-expense-wrapper {
+    width: 288px;
+    height: 465px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 6px;
+  }
+  .add-expenses-button-div {
+    display: flex;
+    flex-direction: column;
+  }
+  .add-expenses-div-division {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+  .wrapper-div-change{
+    flex-direction: column;
   }
 }
