@@ -22,12 +22,13 @@ const TopExpenses = () => {
       .reduce((total, ele) => total + ele.amount, 0),
   }));
 
-  
+//   1. Media query - >992px, FOod salary should be correctly aligned
+// 2. Media query < 552px: Pie chart should have backdrop grey that is better in height to accomodate
   return (
     <>
     {Boolean(data.length) ?
     <Card className="barchart-card-container" 
-    //style={{padding: 10, width: 400, height: 395 }}
+    style={{height: 385 }}
     >
       <BarChart width={300} height={300} data={data}>
         <CartesianGrid strokeDasharray="3 3" />
@@ -42,7 +43,7 @@ const TopExpenses = () => {
         />
       </BarChart>
     </Card>
-    :  <Card style={{padding: 10, width: 400, height: 395 }}><h4 style={{color: "#43967B"}}><i>Kindly Add Expenses, <br/> To see Bar Graph</i></h4></Card>}
+    :  <Card className="barchart-card-container "><h4 style={{color: "#43967B", height: 385}}><i>Kindly Add Expenses, <br/> To see Bar Graph</i></h4></Card>}
     </>
   );
 };

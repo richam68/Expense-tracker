@@ -28,7 +28,7 @@ const PieChartComponent = () => {
 
   // Generate colors for each category
   const COLORS = useMemo(() => data.map((_, i) => `hsl(${(i * 360) / data.length}, 70%, 50%)`), 
-  [data.length]);
+  [data]);
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">

@@ -1,13 +1,13 @@
 import React, { useContext, useState } from "react";
 import { ExpenseContext } from "../Context/ExpenseContext";
 import { useSnackbar } from "notistack";
-import {
-  FaHamburger,
-  FaSchool,
-  FaPlane,
-  FaRegMoneyBillAlt,
-} from "react-icons/fa";
-import { DiAtom } from "react-icons/di";
+// import {
+//   FaHamburger,
+//   FaSchool,
+//   FaPlane,
+//   FaRegMoneyBillAlt,
+// } from "react-icons/fa";
+// import { DiAtom } from "react-icons/di";
 
 const AddExpenses = ({ setModalIsOpen }) => {
   const [formData, setFormData] = useState({
@@ -24,20 +24,20 @@ const AddExpenses = ({ setModalIsOpen }) => {
   //   renderIcon();
   // }, [formData.category]);
 
-  const renderIcon = () => {
-    switch (showIcons) {
-      case "food":
-        return <FaHamburger />;
-      case "school":
-        return <FaSchool />;
-      case "travel":
-        return <FaPlane />;
-      case "creditCard":
-        return <FaRegMoneyBillAlt />;
-      default:
-        return <DiAtom/>;
-    }
-  };
+  // const renderIcon = () => {
+  //   switch (showIcons) {
+  //     case "food":
+  //       return <FaHamburger />;
+  //     case "school":
+  //       return <FaSchool />;
+  //     case "travel":
+  //       return <FaPlane />;
+  //     case "creditCard":
+  //       return <FaRegMoneyBillAlt />;
+  //     default:
+  //       return <DiAtom/>;
+  //   }
+  // };
 
   // getnestedValue({a: {b: {c : d: "home"}}}, "a/b/c/d", "default value")
   //closure in details
