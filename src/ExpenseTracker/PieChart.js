@@ -6,14 +6,18 @@ const PieChartComponent = () => {
   const { state } = useContext(ExpenseContext);
 
   // Calculate the total amount spent
-  const totalAmount = useMemo(() => state.expenses.reduce((acc, expense) => acc + expense.amount, 0), [state.expenses]);
+  const totalAmount = useMemo(
+    () => state.expenses.reduce((acc, expense) => acc + expense.amount, 0),
+    [state.expenses]
+  );
 
   // Extract unique categories and calculate the percentage value for each category
   const data = useMemo(() => {
-    const categories = [...new Set(state.expenses.map((expense) => expense.category))];
-    
-    return categories.map((category) => {
+    const categories = [
+      ...new Set(state.expenses.map((expense) => expense.category)),
+    ];
 
+    return categories.map((category) => {
       const categoryTotal = state.expenses
         .filter((expense) => expense.category === category)
         .reduce((acc, expense) => acc + expense.amount, 0);
@@ -27,33 +31,36 @@ const PieChartComponent = () => {
   }, [state.expenses, totalAmount]);
 
   // Generate colors for each category
-  const COLORS = useMemo(() => data.map((_, i) => `hsl(${(i * 360) / data.length}, 70%, 50%)`), 
-  [data]);
+  const COLORS = useMemo(
+    () => data.map((_, i) => `hsl(${(i * 360) / data.length}, 70%, 50%)`),
+    [data]
+  );
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center">
       <div>
-
-   
-      <PieChart width={300} height={250}>
-        <Pie
-          data={data}
-          cx={150}
-          cy={150}
-          labelLine={false}
-          outerRadius={80}
-          fill="green"
-          dataKey="value"
-          // label={({ name, percentage }) => `${name}: ${percentage}%`}
-        >
-          {data.map((entry, index) => (
-            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-          ))}
-        </Pie>
-        <Tooltip />
-      </PieChart>
-        </div>
-      <div className="mb-5 d-flex text-white" >
+        <PieChart width={300} height={250}>
+          <Pie
+            data={data}
+            cx={150}
+            cy={150}
+            labelLine={false}
+            outerRadius={80}
+            fill="green"
+            dataKey="value"
+            // label={({ name, percentage }) => `${name}: ${percentage}%`}
+          >
+            {data.map((entry, index) => (
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
+            ))}
+          </Pie>
+          <Tooltip />
+        </PieChart>
+      </div>
+      <div className="mb-5 d-flex text-white">
         {data.map((entry, index) => (
           <div key={`legend-${index}`} className="d-flex align-items-center">
             <div
@@ -62,7 +69,7 @@ const PieChartComponent = () => {
                 height: 4,
                 backgroundColor: COLORS[index % COLORS.length],
                 borderRadius: 10,
-                margin: 5
+                margin: 5,
               }}
             ></div>
             <span>{entry.name}</span>

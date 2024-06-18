@@ -15,12 +15,19 @@ const WalletBalance = () => {
         Wallet Balance: <span>${state.balance}</span>
       </h5>
 
-      <Button className="wallet-button mt-3" onClick={() => setModalIsOpen(true)}>
-      
+      <Button
+        className="wallet-button mt-3"
+        onClick={() => setModalIsOpen(true)}
+      >
         <FaPlus /> Add Income
- 
       </Button>
-      <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)} style={{opacity: '50 !important'}}><AddIncomeForm setModalIsOpen={setModalIsOpen}/></Modal>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={() => setModalIsOpen(false)}
+        style={{ opacity: "50 !important" }}
+      >
+        <AddIncomeForm setModalIsOpen={setModalIsOpen} />
+      </Modal>
     </div>
   );
 };

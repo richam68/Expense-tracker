@@ -6,10 +6,13 @@ import Modal from "react-modal";
 import { ExpenseContext } from "../Context/ExpenseContext";
 
 const Expenses = () => {
-  const { state } = useContext(ExpenseContext)
+  const { state } = useContext(ExpenseContext);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  const expenseVal = state.expenses.reduce((total, ele) => total + ele.amount, 0);
+  const expenseVal = state.expenses.reduce(
+    (total, ele) => total + ele.amount,
+    0
+  );
 
   return (
     <div className="d-flex flex-column justify-content-center align-items-center expenses-wrapper">
@@ -24,7 +27,7 @@ const Expenses = () => {
       </Button>
 
       <Modal isOpen={modalIsOpen} onRequestClose={() => setModalIsOpen(false)}>
-        <AddExpenses setModalIsOpen={setModalIsOpen}/>
+        <AddExpenses setModalIsOpen={setModalIsOpen} />
       </Modal>
     </div>
   );
